@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get"
+      ],
+      "route": "newEmployeeContainer/{id}"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "employeeDocument",
+      "databaseName": "cmptestdb",
+      "collectionName": "newEmployeeContainer",
+      "connectionStringSetting": "cmp-cosmosdb-crud_DOCUMENTDB",
+      "direction": "in",
+      "sqlQuery": "select  * from c where c.id={id}"
+    }
+  ],
+  "disabled": false
+}

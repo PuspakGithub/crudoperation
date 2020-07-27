@@ -1,0 +1,37 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "put"
+      ],
+      "route": "newEmployeeContainer/{id}"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "employeeDocument",
+      "databaseName": "cmptestdb",
+      "collectionName": "newEmployeeContainer",
+      "connectionStringSetting": "cmp-cosmosdb-crud_DOCUMENTDB",
+      "direction": "in"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "outputDocument",
+      "databaseName": "cmptestdb",
+      "collectionName": "newEmployeeContainer",
+      "createIfNotExists": false,
+      "connectionStringSetting": "cmp-cosmos-test-db_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

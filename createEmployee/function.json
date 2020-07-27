@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "employeeDocument",
+      "databaseName": "cmptestdb",
+      "collectionName": "newEmployeeContainer",
+      "connectionStringSetting": "cmp-cosmosdb-crud_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
